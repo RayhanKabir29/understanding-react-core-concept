@@ -1,3 +1,4 @@
+import descImg from "./assets/react-core-concepts.png";
 const reactDescription = ["Fundamental", "Crucial", "Core"];
 function getRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
@@ -14,12 +15,45 @@ function Header() {
     </header>
   );
 }
+function CoreConcept(props) {
+  return (
+    <li>
+      <img src={props.image} alt="" />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <ul>
+            <CoreConcept
+              image={descImg}
+              title="Components"
+              description="Building Block For UI"
+            />
+            <CoreConcept
+              image={descImg}
+              title="JSX"
+              description="Building Block For UI"
+            />
+            <CoreConcept
+              image={descImg}
+              title="Props"
+              description="Building Block For UI"
+            />
+            <CoreConcept
+              image={descImg}
+              title="State"
+              description="Building Block For UI"
+            />
+          </ul>
+        </section>
       </main>
     </div>
   );
